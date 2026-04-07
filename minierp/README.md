@@ -90,3 +90,26 @@ CLIENTE ||--o{ PEDIDO : "tiene"
 ESTADO ||--o{ PEDIDO : "define"
 PEDIDO ||--o{ LINEAPEDIDO : "incluye"
 PRODUCTO ||--o{ LINEAPEDIDO : "aparece en"
+
+## AA2 - KPI CRM: Tasa de Conversión
+
+La tasa de conversión mide el porcentaje de oportunidades comerciales que terminan convirtiéndose en una venta cerrada con éxito.
+
+### Fórmula
+
+Tasa de Conversión = (Oportunidades Ganadas / Total de Oportunidades) * 100
+
+### Cómo se calcula en este proyecto
+
+Para calcular este KPI se utilizan los datos del modelo `Oportunidad`:
+
+- Se cuentan todas las oportunidades registradas.
+- Se cuentan cuántas tienen la etapa `Cerrada Ganada`.
+- Se divide el número de oportunidades ganadas entre el total.
+- El resultado se multiplica por 100 para obtener el porcentaje.
+
+### Ejemplo
+
+Si existen 10 oportunidades en total y 4 están marcadas como `Cerrada Ganada`, la tasa de conversión será:
+
+(4 / 10) * 100 = 40%
