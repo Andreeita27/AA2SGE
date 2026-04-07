@@ -1,8 +1,13 @@
 {% extends 'core/base.html' %}
 
 {% block content %}
+    <h2>AA2 - MiniERP</h2>
+
     <div class="menu">
         <a class="btn" href="{% url 'producto_add' %}">Crear producto</a>
         <a class="btn" href="{% url 'cliente_add' %}">Crear cliente</a>
+        <a class="btn" href="{% url 'crm_dashboard' %}">Ver dashboard CRM</a>
+        <a class="btn" href="{% url 'api_productos' %}">Ver API de productos</a>
+        <a class="btn" href="/admin/">Ir al admin</a>
     </div>
 {% endblock %}
