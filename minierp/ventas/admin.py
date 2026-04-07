@@ -8,4 +8,4 @@ class LineaPedidoInline(admin.TabularInline):
 @admin.register(Pedido)
 class PedidoAdmin(admin.ModelAdmin):
 	inlines = [LineaPedidoInline]
-	list_display = ('id', 'cliente', 'fecha_creacion', 'estado')
+	list_display = ('id', 'cliente', 'fecha_creacion', 'estado', 'total_base', 'total_iva', 'total_pedido',)
