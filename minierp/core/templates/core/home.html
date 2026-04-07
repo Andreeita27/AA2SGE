@@ -1,0 +1,11 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+    <h2>AA2 - Fase 1</h2>
+    <p>Desde aquí puedes probar los formularios de productos y clientes.</p>
+
+    <div class="menu">
+        <a class="btn" href="{% url 'producto_add' %}">Crear producto</a>
+        <a class="btn" href="{% url 'cliente_add' %}">Crear cliente</a>
+    </div>
+{% endblock %}
