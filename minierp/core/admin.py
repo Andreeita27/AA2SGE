@@ -14,4 +14,4 @@ class ProductoAdmin(admin.ModelAdmin):
 @admin.register(Estado)
 class EstadoAdmin(admin.ModelAdmin):
     list_display = ('id', 'nombre')
-    search_fields = ('nombre')
+    search_fields = ('nombre',)
