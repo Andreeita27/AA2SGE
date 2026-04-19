@@ -37,7 +37,7 @@ class LineaPedido(models.Model):
 	# Crea la regla de que la cantidad debe ser mayor que 0 en la bbdd.
 		constraints = [
 			models.CheckConstraint(
-				check=models.Q(cantidad__gt=0),
+				condition=models.Q(cantidad__gt=0),
 				name='cantidad_positiva_check'
 			)
 		]
