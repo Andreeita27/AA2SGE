@@ -3,7 +3,7 @@ from django.db import models
 class Cliente(models.Model):
 	nif = models.CharField(max_length=9, unique=True, verbose_name="NIF")
 	nombre = models.CharField(max_length=100)
-	email = models.EmailField(blank=True, null=True)
+	email = models.EmailField()
 
 	def __str__(self):
 		return f"{self.nombre} ({self.nif})"

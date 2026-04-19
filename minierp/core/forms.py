@@ -23,27 +23,15 @@ class ClienteForm(forms.ModelForm):
             'email': 'Debe pertenecer al dominio corporativo @svalero.com',
         }
 
-    def clean(self):
-        cleaned_data = super().clean()
-        email = cleaned_data.get('email')
-        nif = cleaned_data.get('nif')
+    def clean_email(self):
+        email = self.cleaned_data.get('email')
 
-        email_valido = False
-        nif_unico = False
-
-        if email and email.lower().endswith('@svalero.com'):
-            email_valido = True
-
-        if nif:
-            qs = Cliente.objects.filter(nif=nif)
-            if self.instance.pk:
-                qs = qs.exclude(pk=self.instance.pk)
-            if not qs.exists():
-                nif_unico = True
-
-        if not email_valido and not nif_unico:
+        if not email:
+            raise forms.ValidationError("El email es obligatorio.")
+        
+        if not email.lower().endswith('@svalero.com'):
             raise forms.ValidationError(
-                "El cliente debe tener un email corporativo (@svalero.com) o un NIF único."
+                "El email debe pertenecer al dominio corporativo @svalero.com."
             )
         
-        return cleaned_data
+        return email
