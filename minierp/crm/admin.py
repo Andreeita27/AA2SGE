@@ -1,7 +1,7 @@
 from django.contrib import admin
 from .models import Oportunidad
 
-@admin.register(Oportunidad)
+@admin.register(Oportunidad) #Reigstra modelo en el admin
 class OportunidadAdmin(admin.ModelAdmin):
     list_display = ('id', 'titulo', 'cliente', 'valor_estimado', 'etapa', 'fecha_creacion', 'fecha_cierre',)
     search_fields = ('titulo', 'cliente__nombre', 'cliente__nif')
